@@ -13,17 +13,7 @@ async def health():
     return {"status": "ok"}
 
 @app.post("/analyze-ticket", response_model=TicketResponse)
-async def analyze(request: Request):
-    try:
-        body = await request.json()
-    except Exception:
-        return JSONResponse(status_code=400, content={"error": "Invalid JSON body"})
-    
-    try:
-        ticket = TicketRequest(**body)
-    except ValidationError as e:
-        return JSONResponse(status_code=400, content={"error": "Schema validation failed", "details": str(e)})
-    
+async def analyze(ticket: TicketRequest):
     if not ticket.complaint or not ticket.complaint.strip():
         return JSONResponse(status_code=422, content={"error": "complaint field cannot be empty"})
     
