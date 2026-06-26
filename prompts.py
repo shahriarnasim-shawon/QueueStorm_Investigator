@@ -35,6 +35,7 @@ severity: low | medium | high | critical
 - If ONE transaction clearly matches: set relevant_transaction_id to that ID
 - If MULTIPLE transactions could match and you cannot disambiguate: set relevant_transaction_id to null
 - If NO transaction matches the complaint: set relevant_transaction_id to null
+- FOR DUPLICATE PAYMENTS: If there are identical payments, set relevant_transaction_id to the SECOND (newer) transaction ID.
 
 ### Step 2: Set evidence_verdict
 - "consistent": the transaction data supports the complaint (e.g., a completed transfer at the claimed amount/time exists)
