@@ -13,7 +13,7 @@ By integrating the `gemini-3.1-flash-lite` model, it categorizes tickets, assess
 ### Local Setup
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/queuestorm-investigator.git
+   git clone https://github.com/shahriarnasim-shawon/QueueStorm_Investigator
    cd queuestorm-investigator
    ```
 2. Create and activate a virtual environment:
@@ -49,13 +49,13 @@ By integrating the `gemini-3.1-flash-lite` model, it categorizes tickets, assess
 ### `GET /health`
 Returns system status.
 ```bash
-curl https://queuestorm-investigator.onrender.com/health
+curl https://queuestorm-investigator-htj8.onrender.com/health
 ```
 
 ### `POST /analyze-ticket`
 Analyzes a support ticket and returns investigation results.
 ```bash
-curl -X POST https://queuestorm-investigator.onrender.com/analyze-ticket \
+curl -X POST https://queuestorm-investigator-htj8.onrender.com/analyze-ticket \
   -H "Content-Type: application/json" \
   -d '{
     "ticket_id":"TKT-001",
